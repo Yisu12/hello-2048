@@ -22,8 +22,9 @@ pipeline {
             steps {
                 sshagent(['ssh-amazon']) {
                     //El withCredentials ya realiza el ssh-add ~/.ssh/clave-lucatic.pem
-                    sh 'ssh -o "StrictHostKeyChecking no" ec2-user@63.33.189.210 docker pull docker.pkg.github.com/yisu12/hello-pyhton/hello-python:v1'
-                    sh 'docker run --rm -p80:80 -d docker.pkg.github.com/yisu12/hello-pyhton/hello-python:v1'
+                    //sh 'ssh -o "StrictHostKeyChecking no" ec2-user@63.33.189.210 docker pull ghcr.io/yisu12/hello-2048/hello-2048:v1'
+                    sh 'ssh -o "StrictHostKeyChecking no" ec2-user@63.33.189.210 docker pull ghcr.io/yisu12/hello-2048/hello-2048:v1'
+                    sh 'ssh -o "StrictHostKeyChecking no" ec2-user@63.33.189.210 docker-compose up -d'
                 }
                 echo 'Deploy'
             }
