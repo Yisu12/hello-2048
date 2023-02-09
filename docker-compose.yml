@@ -2,6 +2,6 @@ version: "3.0"
 services:
   apache2048:
     build: .
-    image: hello-2048:latest
+    image: ghcr.io/yisu12/hello-2048
     ports:
       - "8080:80"
