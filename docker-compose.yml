@@ -4,4 +4,4 @@ services:
     build: .
     image: ghcr.io/yisu12/hello-2048
     ports:
-      - "8080:80"
+      - "80:80"
